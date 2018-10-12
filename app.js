@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
@@ -5,7 +7,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 var mongoose = require('mongoose');
-var mongoURI = 'mongodb://ms-user:yiRBbqv6nWZ95tF@ds263571.mlab.com:63571/rotten-potatoes';
+var mongoURI = process.env.DB_HOST;
 
 var indexRouter = require('./routes/index');
 
